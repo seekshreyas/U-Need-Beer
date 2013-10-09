@@ -56,7 +56,7 @@ def fillBeer(bVal):
     fill beer mug
     """
 
-    url = 'http://seekshreyas.github.io/uneedbeer?beer=' + str(bVal)
+    url = 'http://seekshreyas.github.io/U-Need-Beer/?beer=' + str(bVal)
 
     app = '/Applications/Firefox.app/Contents/MacOS/firefox'
 
