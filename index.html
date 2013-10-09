@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Beer Viz | Discover beers, & say cheers!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+      
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/rickshaw.css">
+        <link rel="stylesheet" href="css/rickshaw.min.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+
+        <header>
+            <div class="wrapper-page">
+                <!-- beer viz logo here -->
+                <p>BEERVIZ | Discover beers, & say cheers!</p>
+                <nav>
+                    <ul>
+                        <li id="lust-about"><a href="../beerviz/resources/BeerViz_Report_Final.pdf" target="_blank">About</a></li>
+                        <li id="list-credit"><a href="#">Credits</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+        </header>
+
+        <input type="hidden" value="" id='beerType'>
+
+        <section id="intro">
+            <div class="wrapper-page">
+                <article id="wrapper-intro">
+                    <h1>Feeling Thirsty ??</h1>
+                    <p>Tell us your preferred beer style, and find similar beers to try out.</p>
+                    <!-- <p>adkflja asdkjflads jadslfjlasd flajsdlf</p> -->
+                </article>
+            </div>
+            <div id ="wrapper-credit">
+
+                <h3>Our research and inspiration came from the following:</h3>
+                <p>Data</p>
+                 <p><a href="http://snap.stanford.edu/data/web-BeerAdvocate.html">http://snap.stanford.edu/data/web-BeerAdvocate.html</a></p> 
+                <p>Research</p>
+                <p><a href="http://mbostock.github.io/d3/talk/20111116/bundle.html">http://mbostock.github.io/d3/talk/20111116/bundle.html</a></p>
+                <p><a href="http://visualization.geblogs.com/visualization/network/">http://visualization.geblogs.com/visualization/network/</a></p>
+                <p><a href="http://beeradvocate.com/">http://beeradvocate.com/</a></p>
+                <p><a href="http://www.wikipedia.org/">http://www.wikipedia.org/</a></p>
+                <p>Photo Credit</p>
+                <p><a href="http://www.sxc.hu/photo/448918">http://www.sxc.hu/photo/448918</a></p>
+                <p>We are also thankful to Michael and Galen for their guidance. Hat-tip to Luis, Jacob, Seema, Priya and all beer lovers we talked to for encouragement.</p>  
+                <a href="#"><p class="close">[Close]</p></a>
+
+            <div>
+        </section>     
+
+        <section id="about">
+             <div class="wrapper-page">
+
+                <article id="wrapper-about">
+                    <h2>What's your kind of beer?</h2>
+                    <p class="subheading">Choose your preferred beer strength to begin exploring similar beers</p>
+                    <!-- <button id="btn-toggleCategory">ToggleAdvanced</button> -->
+                    <ul class="less" id="list-beercategory">
+                        <!-- group:: light beer -->
+                        <li data-hue="fee799">&nbsp;</li>
+                        <li data-hue="fdd978">&nbsp;</li>
+                        <li data-hue="fdcb5a">&nbsp;</li>
+                        <li data-hue="fcc143">&nbsp;</li>
+                        <li data-hue="f7b324">&nbsp;</li>
+                        <li data-hue="f5a800">&nbsp;</li>
+                        <li data-hue="ee9c00">&nbsp;</li>
+                        <li data-hue="e69100">&nbsp;</li>
+                        <li data-hue="e28800">&nbsp;</li>
+                        <li class="separator" data-hue="da7c00">
+                            <img src="img/pict_beerhue_light.png" width="144" height="199" alt="beerhue-light" />
+                            <span class="beerhue-name">Light</span>
+                        </li>
+
+                        <!-- group:: medium beer -->
+                        <li data-hue="d37400">&nbsp;</li>
+                        <li data-hue="cb6c00">&nbsp;</li>
+                        <li data-hue="c66400">&nbsp;</li>
+                        <li data-hue="bf5c01">&nbsp;</li>
+                        <li data-hue="b65300">&nbsp;</li>
+                        <li data-hue="b04f00">&nbsp;</li>
+                        <li data-hue="ac4700">&nbsp;</li>
+                        <li data-hue="a24000">&nbsp;</li>
+                        <li data-hue="9c3900">&nbsp;</li>
+                        <li class="separator" data-hue="963500">
+                            <img src="img/pict_beerhue_medium.png" width="144" height="199" alt="beerhue-light" />
+                            <span class="beerhue-name">Medium</span>
+                        </li>
+
+                        <!-- group:: medium beer -->
+                        <li data-hue="912f00">&nbsp;</li>
+                        <li data-hue="8b2c00">&nbsp;</li>
+                        <li data-hue="832500">&nbsp;</li>
+                        <li data-hue="7e1f00">&nbsp;</li>
+                        <li data-hue="771c01">&nbsp;</li>
+                        <li data-hue="721b00">&nbsp;</li>
+                        <li data-hue="6c1600">&nbsp;</li>
+                        <li data-hue="671000">&nbsp;</li>
+                        <li data-hue="620f00">&nbsp;</li>
+                        <li class="separator" data-hue="5b0d00">&nbsp;</li>
+
+                        <!-- group:: medium beer -->
+                        <li data-hue="560c03">&nbsp;</li>
+                        <li data-hue="5d0a02">&nbsp;</li>
+                        <li data-hue="500a08">&nbsp;</li>
+                        <li data-hue="4a0605">&nbsp;</li>
+                        <li data-hue="440706">&nbsp;</li>
+                        <li data-hue="420807">&nbsp;</li>
+                        <li data-hue="3c0908">&nbsp;</li>
+                        <li data-hue="390708">&nbsp;</li>
+                        <li data-hue="39080b">&nbsp;</li>
+                        <li class="separator" data-hue="35090a">
+                            <img src="img/pict_beerhue_dark.png" width="144" height="199" alt="beerhue-light" />
+                            <span class="beerhue-name">Dark</span>
+                        </li>
+                    </ul>
+
+                    <div id="wrapper-beerCategorySelection">
+                        <p>You Picked..</p>
+                        <div id="beerCategorySelection">&nbsp;</div>
+                        
+                    </div>
+
+
+                </article>
+            </div>
+            <div class="fb-like" data-href="http://facebook.com/Beerviz" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+        </section>
+        <section id="usePref">
+            <div class="wrapper-page">
+                <article>
+                    <h2>Explore Similar Beers by:</h2>
+                    <ul id="list-usePref">
+                        <li data-usePref="overall" class="active">Overall</li>
+                        <li data-usePref="aroma">Aroma</li>
+                        <li data-usePref="taste">Taste</li>
+                        <li data-usePref="appearance">Appearance</li>                    
+                    </ul>
+
+                </article>
+            </div> 
+        </section>
+        <section class="context-viz active" id="category">
+
+            <aside id="wrapper-category">
+                <div id="styleHead">
+                    <h3>Beer Styles</h3>
+                </div>
+                <ul id="list-beerstyle">
+                    <!-- <li>
+                        <span class="beerstyle-name">Pale Lager</span>
+                        <span class="beerstyle-color">&nbsp;</span>
+                    </li> -->
+                </ul>
+
+            </aside>
+             <div id = "beerviz-legend">
+                    <img src="../beerviz/img/beerviz_legend.png"/>
+            </div>
+
+
+            <div class="wrapper-page">
+
+                <article>
+                    <div id="wrapper-viz">
+
+                    </div>
+
+                    
+                </article>      
+            </div>
+
+            <aside id="wrapper-details">
+               <ul id="list-beersummary">
+                   <li id="beersummary-name"></li>
+                   <li id="beersummary-style"></li>
+                   <li id="beersummary-ABV"></li>
+                   <li id="beersummary-rating"></li>                     
+               </ul>
+               
+
+ 
+            </aside>
+
+        </section>
+
+
+
+        <section class="active" id="summary">
+            <article>
+                
+                    <div id="wrapper-summary">
+                        <h2>About the Data</h2>
+                        <h3>Popularity and top beer styles are based on the number of users who rated the beer.</h3>
+                        <ul id="summary-charts">
+                            <li>
+                                <div id="chart1"></div>
+                            </li>
+                             <li>
+                                <div id="chart2"></div>
+                            </li>
+                             <li>
+                                <div id="chart3"></div>
+                            </li>
+                             <li>
+                                <div id="chart4"></div>
+                            </li>
+                             <li>
+                                <div id="chart5"></div>
+                            </li>      
+                        </ul>
+                    </div>
+               
+            </article>
+                
+        </section>
+
+
+        <footer>
+           <h4>Handcrafted with <span class="icon-entypo">&hearts;</span> by:</h4>
+            <ul id="list-authors">
+                <li>
+                    <!-- <div class="authors" id="authors-divya">
+                         <div id="wrapper-flower">
+                            <div class="diafragma">
+                                <div class="text">BEERVIZ</div>
+                                <div class="hoja"></div>
+                                <div class="hoja giro"></div>
+                            </div>
+                        </div>
+
+                    </div> -->
+                    Divya Anand
+                </li>
+                <li>
+                    <!-- <div  class="authors" id="authors-shreyas">
+                         <div id="wrapper-flower">
+                            <div class="diafragma">
+                                <div class="text">BEERVIZ</div>
+                                <div class="hoja"></div>
+                                <div class="hoja giro"></div>
+                            </div>
+                        </div>
+                    </div> -->
+                    Sonali Sharma
+                </li>
+                <li>
+                    <!-- <div class="authors" id="authors-sonali">
+                        <div id="wrapper-flower">
+                            <div class="diafragma">
+                                <div class="text">BEERVIZ</div>
+                                <div class="hoja"></div>
+                                <div class="hoja giro"></div>
+                            </div>
+                        </div>
+                    </div> -->
+                    Evie Phan
+                </li>
+                <li>
+                    <!-- <div class="authors" id="authors-evie">
+                        <div id="wrapper-flower">
+                            <div class="diafragma">
+                              <div class="text">BEERVIZ</div>
+                              <div class="hoja"></div>
+                              <div class="hoja giro"></div>
+                            </div>
+                        </div>
+                    </div> -->
+                    Shreyas
+                </li>
+            </ul>
+
+        </footer>
+       
+
+       
+
+        <script src="js/vendor/jquery-1.9.1.min.js"></script>
+
+        <script src="js/vendor/d3.js"></script>
+        <script src="js/vendor/packages.js"></script>
+        <script src="js/vendor/highcharts.js"></script>
+        <script src="js/vendor/exporting.js"></script>
+
+        <!--<script src="js/plugins.js"></script> -->
+        <script src="js/main.js"></script>
+         <script src="js/summary.js"></script>
+
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-39907393-1'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+
+        <!-- Fb like button -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    </body>
+</html>
