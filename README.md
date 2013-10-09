@@ -1,4 +1,1 @@
-U-Need-Beer
-===========
-
-Keep Calm and Get your Beer On
+# U NEED A BEER
