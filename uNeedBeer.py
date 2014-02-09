@@ -26,7 +26,7 @@ def getArduino():
     Get serial input from Arduino
     """
 
-    serialVals = []
+    # serialVals = []
 
     listen=True
 
@@ -34,22 +34,24 @@ def getArduino():
         ser = serial.Serial('/dev/tty.usbmodem1421', 9600)
         val = ser.readline()
 
-        try:
-            num = int(val)
-        except:
-            num = 0
+        print val
 
-        if num != 0:
-            serialVals.append(num)
+        # try:
+        #     num = int(val)
+        # except:
+        #     num = 0
 
-        if len(serialVals) > 3 and serialVals[-1] == serialVals[-2] and serialVals[-2] != 0:
-            listen = False
+        # if num != 0:
+        #     serialVals.append(num)
+
+        # if len(serialVals) > 3 and serialVals[-1] == serialVals[-2] and serialVals[-2] != 0:
+        #     listen = False
 
     #get 1 value
-    meanVal = int(sum(serialVals) / float(len(serialVals)))
-    print serialVals, meanVal
+    # meanVal = int(sum(serialVals) / float(len(serialVals)))
+    # print serialVals, meanVal
 
-    fillBeer(meanVal)
+    # fillBeer(meanVal)
 
 def fillBeer(bVal):
     """
